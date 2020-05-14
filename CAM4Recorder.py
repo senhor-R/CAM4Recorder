@@ -1,6 +1,6 @@
 import requests, time, datetime, os, threading, sys, configparser
 import uuid
-from livestreamer import Livestreamer
+from streamlink import Streamlink
 
 if os.name == 'nt':
     import ctypes
@@ -63,7 +63,7 @@ def startRecording(model):
         if model in notonline:
             notonline.remove(model)
 
-        session = Livestreamer()
+        session = Streamlink()
         session.set_option('http-headers', "referer=https://www.cam4.com/{}".format(model))
         
         streams = session.streams("hlsvariant://https://{}/amlst:{}_aac/playlist.m3u8?referer=www.cam4.com&timestamp={}"
