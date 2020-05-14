@@ -1,1 +1,1 @@
-livestreamer
+sudo apt install streamlink
