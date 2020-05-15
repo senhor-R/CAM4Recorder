@@ -137,7 +137,7 @@ if __name__ == '__main__':
                     thread = threading.Thread(target=startRecording, args=(model,))
                     thread.start()
             for i in range(setting['interval'], 0, -1):
-                sys.stdout.write("\033[K")
+                os.system('cls||clear')
                 print("{} not online Next check in {} seconds".format(notonline, i), end="\n")
                 sys.stdout.write("\033[K")
                 print("the following models are being recorded: {}".format(recording), end="\r")
